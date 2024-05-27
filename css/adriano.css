@@ -1,0 +1,241 @@
+:root {
+  --typeface-default: Poppins, sans-serif;
+  --typeface-off-1: 'Courier New', Courier, monospace;
+
+  --fs-13px: 0.8125rem;
+  --fs-14px: 0.875rem;
+  --fs-15px: 0.9375rem;
+  --fs-16px: 1rem;
+  --fs-18px: 1.125rem;
+  --fs-20px: 1.25rem;
+  --fs-24px: 1.5rem;
+  --fs-30px: 1.875rem;
+  --fs-35px: 2.1875rem;
+  --fs-40px: 2.5rem;
+
+  --fw-thin: 100;
+  --fw-extraLight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+  --fw-extraBold: 800;
+  --fw-black: 900;
+
+  --clr-primary-800: #2A2A2A;
+  --clr-primary-600: #4A4A4A;
+  --clr-primary-400: #6a6a6a;
+  --clr-primary-200: #8A8A8A;
+
+  --clr-secondary-800: #bebebe;
+  --clr-secondary-600: #D2D2D2;
+  --clr-secondary-400: #E6E6E6;
+  --clr-secondary-200: #FAFAFA;
+
+  --clr-accent-800: #BED1CF;
+  --clr-accent-600: #C4E4E0;
+  --clr-accent-400: #DCF0EE;
+  --clr-accent-200: #F5FFFE;
+  --clr-accent-200-alpha: #f5fffee7;
+
+  --clr-random-1: #FFF7F1;
+  --clr-random-2: #FFE4C9;
+  --clr-random-3: #E78895;
+  --clr-random-3-alpha: #e7889566;
+  --clr-random-4: #BEE2DE;
+  --clr-random-4-alpha: #bee2de58;
+
+  --card-item-shadow:rgba(30, 180, 207, 0.285);
+  --card-item-color: rgba(255, 255, 255, 0.84);
+}
+
+* {
+  font-family: var(--typeface-default);
+  font-size: var(--fs-16px);
+  box-sizing: content-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+---- HEADER CONTENTS ----  
+*/
+
+.compact-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header .compact-container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .compact-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 
+---- MAIN CONTENTS ----  
+*/
+
+main {
+  height: 100svh;
+  border: 1px solid green;
+}
+
+#slot_machine {
+  border: 1px solid blue;
+  max-width: 80%;
+  margin: 0 auto;
+  padding-block: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  column-gap: 8px;
+}
+
+.slot {
+  border: 1px solid green;
+  border-radius: 1em;
+  padding: 1em;
+  text-align: center;
+}
+
+.slot img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+#hud {
+  max-height: 200px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#hud .left-hud {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 32px;
+}
+
+#credits-container {
+  text-align: center;
+}
+
+#credits-container p:nth-child(1) {
+  color: orange;
+  font-size: var(--fs-20px);
+  font-weight: var(--fw-bold);
+}
+
+#winning-display {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#winning-display p:nth-child(1) {
+  color: orangered;
+  font-size: var(--fs-24px);
+  font-weight: var(--fw-bold);
+}
+
+.right-hud {
+  border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.bet-container {
+  text-align: center;
+  padding-inline: 1em;
+  border: 1px solid red;
+}
+
+#bet-controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 140px;
+  column-gap: 2px;
+  padding-inline: 1em;
+  border: 1px solid red;
+}
+
+.bet-container {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.bet-container p:nth-child(1) {
+  color: orange;
+  font-size: var(--fs-20px);
+  font-weight: var(--fw-bold);
+}
+
+/* MODAL POPUPS */
+
+.modal-popup {
+  background-color: rgba(255, 68, 0, 0.837);
+  border-radius: 8px;
+  box-shadow: 0 0 8px 1px;
+  position: fixed;
+  top: 250px;
+  bottom: 250px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 500px; 
+  display: none;
+}
+
+
+.modal-popup .modal-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
+  padding: 1em;
+  gap: 8px;
+}
+
+.modal-header {
+  padding: 1em;
+}
+
+.modal-header #modal-exit-btn {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content .betvalue {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.modal-content .betvalue:hover {
+  transform: scaleX(1.05);
+}
